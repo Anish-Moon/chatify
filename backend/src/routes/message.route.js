@@ -8,7 +8,7 @@ const router = express.Router();
 //the middleware executes in sequence so first arcjet protection will run 
 // and then protectRoute will run to check if the user is authenticated
 // or not before allowing access to the routes
-router.use(arcjetProtection,protectRoute);
+ router.use(arcjetProtection,protectRoute);
 
 router.get("/contacts",getAllContacts);
 router.get("/chats", getChatPartners);
