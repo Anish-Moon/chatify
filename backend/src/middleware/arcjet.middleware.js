@@ -14,8 +14,6 @@ export const arcjetProtection = async (req, res, next) => {
               return res.status(403).json({message: "Access denied by security policy"})    
             }
         }
-
-
     //check for spoofed bots that may bypass arcjet
     if(decision.results.some(isSpoofedBot)){
         return res.status(403).json({
@@ -23,7 +21,6 @@ export const arcjetProtection = async (req, res, next) => {
             message: "Malicious bot activity detected."
         })
     }
-
     next();
     } catch (error) {
         console.error("Error evaluating Arcjet rules:", error);
