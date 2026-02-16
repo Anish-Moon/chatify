@@ -60,7 +60,6 @@ export const useAuthStore = create((set) => ({
       console.log("Error in update profile", error);
       const message = error?.response?.data?.message || "Failed to update profile";
       toast.error(message);
-      return null;
     }
   },
 
